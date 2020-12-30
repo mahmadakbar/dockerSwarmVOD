@@ -1,0 +1,34 @@
+@font-face {
+    font-family: SansLight;
+    src: url(OpenSans-Light.ttf);
+  }
+
+body {
+  background-color: #74b9ff;
+  width: 100%;
+  height: 100%;
+}
+
+#videoPlayer {
+  width: 900px;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 7px 12px 23px -4px rgba(0, 0, 0, 0.61);
+  -moz-box-shadow: 7px 12px 23px -4px rgba(0, 0, 0, 0.61);
+  box-shadow: 7px 12px 23px -4px rgba(0, 0, 0, 0.61);
+}
+
+#title{
+    position: absolute;
+    color: #fff;
+    font-family: SansLight;
+    font-size: 12px;
+    bottom: 0;
+    right: 0;
+    margin-right: 18%;
+    margin-bottom: 5%;
+    text-shadow: 2px 2px 4px #000000;
+}

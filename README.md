@@ -72,10 +72,10 @@ docker node rm <name>
 
 10. Turn off node (optional)
 ```
-docker node update - availability drain <Node ID>
+docker node update --availability drain <Node ID>
 ```
 
 10. Turn on node (optional)
 ```
-docker node update - availability active <Node ID>
+docker node update --availability active <Node ID>
 ```

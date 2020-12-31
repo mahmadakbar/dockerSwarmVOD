@@ -19,7 +19,7 @@ docker run -it -p 3000:8000 <app name>
 
 ## Run Docker Swarm
 
-1. Create swarm service
+1. Create swarm services
 ```
 docker swarm init --advertise-addr <ip>
 ```
@@ -50,7 +50,7 @@ docker service create <name> -p 3000:8000 --relplicas <n node> <image-name>
 ```
 docker ps
 ```
-6. List of Service
+6. List of Services
 ```
 docker service ls
 ```

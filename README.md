@@ -1,4 +1,4 @@
-# DevOps - A simple Docker Swarm application using node.js to run Video on Deman services
+# DevOps - A simple Docker Swarm application using node.js to run Video on Demand services
 
 Download This [video](https://youtu.be/eXju5LkrYs4) with 4k resolution and then rename it with _**DolbyVision.mkv**_
 

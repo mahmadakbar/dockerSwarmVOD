@@ -9,7 +9,7 @@ Download This [video](https://youtu.be/eXju5LkrYs4) with 4k resolution and then 
 1. Build Node js app in docker
 
 ```
-docker build -t <app name>
+docker build -t <app name> .
 ```
 
 2.  running the services (but we want to run Docker swarm, so we do not need to do)

@@ -4,6 +4,7 @@ Download This [video](https://youtu.be/eXju5LkrYs4) with 4k resolution and then 
 
 ![alt text](https://iili.io/KeSqCl.jpg)
 
+
 ## Install the program
 
 1. Build Node js app in docker
@@ -19,7 +20,7 @@ docker run -it -p 3000:8000 <app name>
 
 ## Run Docker Swarm
 
-1. Create swarm services
+1. Create swarm services (in some case firewall was blocked by ubuntu, you must enable it first with "sudo ufw allow 2377")
 ```
 docker swarm init --advertise-addr <ip>
 ```
@@ -33,17 +34,17 @@ docker node ls
 4. create services
 ```
 # for running in one node
-docker service create <name> -p 3000:8000 <image-name>
+docker service create --name <name> -p 3000:8000 <image-name>
 
 or
 
 # for running in global nodes (all nodes connected to the token)
-docker service create <name> -p 3000:8000 --mode global <image-name>
+docker service create --name <name> -p 3000:8000 --mode global <image-name>
 
 or
 
 # enter manually the desired number of nodes
-docker service create <name> -p 3000:8000 --relplicas <n node> <image-name>
+docker service create --name <name> -p 3000:8000 --relplicas <n node> <image-name>
 ```
 
 5. Check running aplication
@@ -70,12 +71,17 @@ docker service scale <name>=<n node>
 docker node rm <name>
 ```
 
-10. Turn off node (optional)
+10. Remove service (optional)
+```
+docker service rm <name>
+```
+
+11. Turn off node (optional)
 ```
 docker node update --availability drain <Node ID>
 ```
 
-10. Turn on node (optional)
+12. Turn on node (optional)
 ```
 docker node update --availability active <Node ID>
 ```

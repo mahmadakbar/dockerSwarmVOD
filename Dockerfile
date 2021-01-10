@@ -12,3 +12,6 @@ COPY . /app
 CMD node index.js
 # expose ort number
 EXPOSE 3000
+# run nginx
+FROM nginx
+COPY nginx.conf /etc/nginx/nginx.conf

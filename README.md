@@ -85,3 +85,43 @@ docker node update --availability drain <Node ID>
 ```
 docker node update --availability active <Node ID>
 ```
+
+## NGINX Load Balancing
+
+![alt text](https://freeimage.host/i/KZdL42)
+
+1. Prepare the Diretory
+```
+sudo mkdir -p /data/loadbalancer
+```
+
+2. Create load balancer setup file with name "default.conf"
+```
+sudo nano /data/loadbalancer/default.conf
+```
+
+3. Write load balancer "default.conf"
+```
+server {
+   listen 8000;
+   location / {
+      proxy_pass http://backend;
+   }
+}
+upstream backend {
+   server <manager ip>:3000;
+   server <worker-1 ip>:3000;
+   server <worker-2 ip>:3000;
+}
+```
+
+4. create new docker service for nginx load balancer
+```
+docker service create \
+--name loadbalancer \
+--mount type=bind,source=/data/loadbalancer,target=/etc/nginx/conf.d \
+--publish 80:80 \
+swarm-lb
+```
+
+

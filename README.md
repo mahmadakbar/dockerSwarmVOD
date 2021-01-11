@@ -88,7 +88,7 @@ docker node update --availability active <Node ID>
 
 ## NGINX Load Balancing
 
-![alt text](https://freeimage.host/i/KZdL42)
+![alt text](https://iili.io/KZdL42.jpg)
 
 1. Prepare the Diretory
 ```
